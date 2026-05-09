@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back3"
+    android:padding="16dp">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/nilaiIavg"
+                android:layout_width="153dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/questrial_egular"
+                android:gravity="center"
+                android:text="Nilai I0avg"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tampilkanIavg"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/custom2"
+                android:fontFamily="@font/timesnewromanbold"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_weight="1"
+                android:layout_width="105dp"
+                android:layout_height="30dp"
+                android:background="@drawable/custom3"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="SAVE"
+                android:textSize="10sp"
+                android:textColor="@color/black"
+                android:id="@+id/simpaniavg"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"/>
+
+        <!-- Table Header -->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:paddingBottom="8dp"
+            android:background="@color/abu_muda_transparan5">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="I"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView android:text="C" android:textColor="#FFFFFF" android:textStyle="bold" android:gravity="center" android:textSize="20sp"/>
+                <TextView android:text="T" android:textColor="#FFFFFF" android:textStyle="bold" android:gravity="center" android:textSize="20sp"/>
+                <TextView android:text="Q" android:textColor="#FFFFFF" android:textStyle="bold" android:gravity="center" android:textSize="20sp"/>
+            </TableRow>
+
+            <!-- Example row (baris 1) -->
+            <TableRow>
+                <TextView android:id="@+id/textI1" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC1" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT1" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ1" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI2" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC2" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT2" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ2" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI3" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC3" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT3" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ3" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI4" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC4" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT4" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ4" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI5" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC5" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT5" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ5" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI6" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC6" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT6" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ6" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI7" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC7" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT7" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ7" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI8" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC8" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT8" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ8" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI9" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC9" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT9" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ9" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI10" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC10" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT10" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ10" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI11" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC11" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT11" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ11" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI12" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC12" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT12" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ12" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI13" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC13" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT13" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ13" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI14" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC14" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT14" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ14" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textI15" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textC15" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textT15" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+                <TextView android:id="@+id/textQ15" android:text="" android:textColor="#FFFFFF" android:gravity="center"/>
+            </TableRow>
+
+            <!-- Tambah TableRow tambahan sesuai jumlah datamu -->
+
+        </TableLayout>
+
+        <!-- Tombol-tombol -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/deleteButton"
+            android:layout_width="155dp"
+            android:layout_height="45dp"
+            android:background="@drawable/custom3"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/questrial_egular"
+            android:text="DELETE"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp"/>
+        <View
+            android:layout_width="10dp"
+            android:layout_height="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/backButton"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/questrial_egular"
+                android:text="BACK"
+                android:textStyle="bold"
+                android:textSize="13.5sp"
+                android:textColor="@color/white"
+                android:background="@drawable/custom6"
+                android:layout_marginTop="8dp"/>
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="2dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/linearFittingButton"
+                android:layout_width="155dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:text="INPUT VALUE ->>>"
+                android:textColor="@color/white"
+                android:fontFamily="@font/questrial_egular"
+                android:textStyle="bold"
+                android:textSize="13.5sp"
+                android:background="@drawable/custom7"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back3"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nilaislope"
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/questrial_egular"
+            android:gravity="center"
+            android:text="Input Slope"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/timesnewromanbold"
+            android:background="@drawable/custom2"
+            android:text=""
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:id="@+id/tampilkanslope"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nilaiintercept"
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/questrial_egular"
+            android:gravity="center"
+            android:text="Input Intercept"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/timesnewromanbold"
+            android:background="@drawable/custom2"
+            android:text=""
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:id="@+id/tampilkanintercept"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nilaiLODawal"
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/questrial_egular"
+            android:gravity="center"
+            android:text="LOD Start Value"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/timesnewromanbold"
+            android:background="@drawable/custom2"
+            android:text=""
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:id="@+id/tampilkanLODawal"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nilaiLODakhir"
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/questrial_egular"
+            android:gravity="center"
+            android:text="LOD End Value"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/timesnewromanbold"
+            android:background="@drawable/custom2"
+            android:text=""
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:id="@+id/tampilkanLODakhir"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/savefungsi"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom3"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/questrial_egular"
+            android:text="SAVE"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="45dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/deletefungsi"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom3"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/questrial_egular"
+            android:text="DELETE"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+    <View
+        android:layout_width="10dp"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backlagiButton"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/questrial_egular"
+            android:text="BACK"
+            android:textStyle="bold"
+            android:textSize="13.5sp"
+            android:textColor="@color/white"
+            android:background="@drawable/custom6"
+            android:layout_marginTop="8dp"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="2dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/startdetectionnButton"
+            android:layout_width="155dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:text="start detection ->>>"
+            android:textColor="@color/white"
+            android:fontFamily="@font/questrial_egular"
+            android:textStyle="bold"
+            android:textSize="13.5sp"
+            android:background="@drawable/custom7"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+</LinearLayout>
+
+

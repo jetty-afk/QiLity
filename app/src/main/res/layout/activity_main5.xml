@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back4"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="338sp"
+        android:fontFamily="@font/opensansbold"
+        android:text="Result Detection"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:letterSpacing="0.03"
+        android:textStyle="bold"/>
+    <View
+        android:layout_width="10dp"
+        android:layout_height="25sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Detection rate"
+            android:textColor="@color/white"
+            android:fontFamily="@font/questrial_egular"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Concentration"
+            android:textColor="@color/white"
+            android:fontFamily="@font/questrial_egular"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:text=""
+            android:fontFamily="@font/timesnewromanbold"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:id="@+id/tampilanQdong"/>
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:text=""
+            android:fontFamily="@font/timesnewromanbold"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:id="@+id/tampilanCdong"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backlagidan"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/custom8"
+            android:fontFamily="@font/questrial_egular"
+            android:gravity="center"
+            android:text="BACK"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="2dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/newdetection"
+            android:layout_width="160dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/custom8"
+            android:fontFamily="@font/questrial_egular"
+            android:gravity="center"
+            android:text="NEW DETECTION"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40sp"/>
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        style="@style/CustomButton"
+        android:background="@drawable/custom8"
+        android:text="EXIT"
+        android:fontFamily="@font/questrial_egular"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:id="@+id/exit"
+        android:textSize="18dp"/>
+</LinearLayout>
