@@ -45,7 +45,7 @@ public class MainActivitydeteksi extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_main2);
 
 
         previewView = findViewById(R.id.previewView);

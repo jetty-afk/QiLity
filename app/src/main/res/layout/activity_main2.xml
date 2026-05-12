@@ -1,10 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    android:background="@drawable/background2"
+    android:padding="20dp"
+    tools:context=".homepage.MainActivity3">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+
+
+        <FrameLayout
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_marginTop="90dp">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/previewView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:scaleType="fillCenter" />
+
+            <View
+                android:id="@+id/roiFrame"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/custom9"
+                android:elevation="15dp"
+                android:translationZ="15dp" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btnFlash"
+            style="@style/CustomButton"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom"
+            android:text="Flash: OFF"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnAmbilFoto"
+            style="@style/CustomButton"
+            android:layout_width="176dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom"
+            android:fontFamily="@font/questrial_egular"
+            android:gravity="center"
+            android:text="Ambil foto"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/layoutHasil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/custom4"
+            android:layout_marginTop="20dp"
+            android:padding="16dp">
+
+            <TextView android:id="@+id/tvRGB" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Nilai RGB: -" android:textColor="@color/black" />
+            <TextView android:id="@+id/tvGray" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Nilai Gray: -" android:textColor="@color/black" />
+            <TextView android:id="@+id/tvPPB" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Kadar CO₂ (ppb): -" android:textColor="@android:color/holo_blue_dark" android:textStyle="bold" android:textSize="18sp" />
+            <TextView android:id="@+id/tvKelayakan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Status: -" android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSimpanHasil"
+            style="@style/CustomButton"
+            android:layout_width="176dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom"
+            android:fontFamily="@font/questrial_egular"
+            android:gravity="center"
+            android:text="Simpan data"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*Pastikan sensor berada di dalam kotak tengah"
+            android:textColor="#FF5722"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+</ScrollView>
