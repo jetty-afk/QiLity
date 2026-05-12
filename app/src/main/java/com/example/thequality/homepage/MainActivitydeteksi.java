@@ -6,12 +6,14 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Bundle;
+import android.view.ScaleGestureDetector;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.camera.core.Camera;
 import androidx.camera.core.CameraSelector;
 import androidx.camera.core.ImageCapture;
 import androidx.camera.core.ImageCaptureException;
@@ -41,7 +43,11 @@ public class MainActivitydeteksi extends AppCompatActivity {
     private ExecutorService cameraExecutor;
 
     private TextView tvRGB, tvGray, tvPPB, tvKelayakan, tvS;
-    private Button btnAmbilFoto;
+    private Button btnAmbilFoto, btnFlash;
+    private Camera camera;
+    private boolean isFlashOn = false;
+
+    private ScaleGestureDetector scaleGestureDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +61,7 @@ public class MainActivitydeteksi extends AppCompatActivity {
         tvKelayakan   = findViewById(R.id.tvKelayakan);
         tvS           = findViewById(R.id.tvS);
         btnAmbilFoto  = findViewById(R.id.btnAmbilFoto);
+        btnFlash      = findViewById(R.id.btnFlash);
 
         cameraExecutor = Executors.newSingleThreadExecutor();
 
@@ -69,6 +76,26 @@ public class MainActivitydeteksi extends AppCompatActivity {
         }
 
         btnAmbilFoto.setOnClickListener(v -> ambilFotoDanAnalisis());
+        btnFlash.setOnClickListener(v -> toggleFlash());
+
+        scaleGestureDetector = new ScaleGestureDetector(this,
+                new ScaleGestureDetector.SimpleOnScaleGestureListener() {
+                    @Override
+                    public boolean onScale(ScaleGestureDetector detector) {
+                        if (camera == null) return false;
+                        float currentZoom = camera.getCameraInfo()
+                                .getZoomState().getValue().getZoomRatio();
+                        float scaleFactor = detector.getScaleFactor();
+                        float newZoom = currentZoom * scaleFactor;
+                        camera.getCameraControl().setZoomRatio(newZoom);
+                        return true;
+                    }
+                });
+
+        previewView.setOnTouchListener((v, event) -> {
+            scaleGestureDetector.onTouchEvent(event);
+            return true;
+        });
     }
 
     private void startCamera() {
@@ -89,7 +116,7 @@ public class MainActivitydeteksi extends AppCompatActivity {
                 CameraSelector cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA;
 
                 cameraProvider.unbindAll();
-                cameraProvider.bindToLifecycle(
+                camera = cameraProvider.bindToLifecycle(
                         this,
                         cameraSelector,
                         preview,
@@ -246,6 +273,19 @@ public class MainActivitydeteksi extends AppCompatActivity {
                 );
             }
         });
+    }
+
+    private void toggleFlash() {
+        if (camera == null || !camera.getCameraInfo().hasFlashUnit()) return;
+
+        isFlashOn = !isFlashOn;
+        camera.getCameraControl().enableTorch(isFlashOn);
+
+        if (isFlashOn) {
+            btnFlash.setText("Flash: ON");
+        } else {
+            btnFlash.setText("Flash: OFF");
+        }
     }
 
     private boolean allPermissionsGranted() {
