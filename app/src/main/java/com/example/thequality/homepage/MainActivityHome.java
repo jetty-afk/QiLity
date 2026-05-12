@@ -32,7 +32,7 @@ public class MainActivityHome extends AppCompatActivity {
         cardDeteksi = findViewById(R.id.cardDeteksi);
         cardPublik = findViewById(R.id.cardPublik);
         cardProfil = findViewById(R.id.cardProfil);
-        cardRiwayat = findViewById(R.id.cardRiwayat); // ← tambahkan inisialisasi
+        cardRiwayat = findViewById(R.id.cardRiwayat);
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
