@@ -35,11 +35,9 @@ public class MainActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_riwayat);
 
-        // Firebase
         auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
 
-        // RecyclerView
         recyclerRiwayat = findViewById(R.id.recyclerRiwayat);
         recyclerRiwayat.setLayoutManager(new LinearLayoutManager(this));
 
