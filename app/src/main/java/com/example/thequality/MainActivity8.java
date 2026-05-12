@@ -20,7 +20,7 @@ import androidx.core.content.ContextCompat;
 
 import java.io.IOException;
 
-public class MainActivity31 extends AppCompatActivity {
+public class MainActivity8 extends AppCompatActivity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_IMAGE_PICK = 2;
@@ -30,7 +30,7 @@ public class MainActivity31 extends AppCompatActivity {
     private ImageView imageViewSensor;
     private TextView textViewResult;
     private Button buttonAnalyze;
-    private Uri currentImageUri; // URI untuk gambar yang sedang ditampilkan
+    private Uri currentImageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,6 @@ public class MainActivity31 extends AppCompatActivity {
         Button buttonTakePhoto = findViewById(R.id.buttonTakePhoto);
         Button buttonSelectImage = findViewById(R.id.buttonSelectImage);
 
-        // 1. Ambil Foto (Kamera)
         buttonTakePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,15 +51,12 @@ public class MainActivity31 extends AppCompatActivity {
             }
         });
 
-        // 2. Pilih Gambar (Galeri)
         buttonSelectImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkStoragePermission();
             }
         });
-
-        // 3. Analisis CO2
         buttonAnalyze.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,9 +64,6 @@ public class MainActivity31 extends AppCompatActivity {
             }
         });
     }
-
-    // --- Manajemen Izin (Permissions) ---
-
     private void checkCameraPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
@@ -80,22 +73,18 @@ public class MainActivity31 extends AppCompatActivity {
     }
 
     private void checkStoragePermission() {
-        // Tentukan izin mana yang akan dicek berdasarkan versi Android
         String permission;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
-            // READ_MEDIA_IMAGES untuk Android 13 (API 33) ke atas
+
             permission = Manifest.permission.READ_MEDIA_IMAGES;
         } else {
-            // READ_EXTERNAL_STORAGE untuk Android lama
+
             permission = Manifest.permission.READ_EXTERNAL_STORAGE;
         }
 
-        // Cek status izin
         if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
-            // Jika izin belum diberikan, minta kepada pengguna
             ActivityCompat.requestPermissions(this, new String[]{permission}, REQUEST_STORAGE_PERMISSION);
         } else {
-            // Jika izin sudah diberikan, langsung jalankan intent memilih gambar
             dispatchPickImageIntent();
         }
     }
@@ -137,17 +126,12 @@ public class MainActivity31 extends AppCompatActivity {
 
         if (resultCode == RESULT_OK) {
             if (requestCode == REQUEST_IMAGE_CAPTURE) {
-                // Dari kamera, gambar biasanya ada di 'data' sebagai 'extra'
                 Bundle extras = data.getExtras();
                 Bitmap imageBitmap = (Bitmap) extras.get("data");
                 imageViewSensor.setImageBitmap(imageBitmap);
                 textViewResult.setText("Kadar CO2: Siap dianalisis");
-                // Catatan: Gambar dari ACTION_IMAGE_CAPTURE ini adalah thumbnail,
-                // untuk gambar full-size, Anda perlu menggunakan FileProvider.
-                // Untuk contoh sederhana ini, kita pakai thumbnail.
-
             } else if (requestCode == REQUEST_IMAGE_PICK) {
-                // Dari galeri, URI gambar ada di 'data'
+
                 currentImageUri = data.getData();
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), currentImageUri);
