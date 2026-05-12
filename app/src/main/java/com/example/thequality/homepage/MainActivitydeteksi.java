@@ -100,26 +100,20 @@ public class MainActivitydeteksi extends AppCompatActivity {
                     public void onCaptureSuccess(@NonNull ImageProxy imageProxy) {
                         Bitmap bitmap = imageToBitmap(imageProxy);
                         imageProxy.close();
-
-                        // 1. Potong gambar tepat di area ROI (tengah)
                         Bitmap croppedROI = cropToROI(bitmap);
 
-                        // 2. Hitung RGB Rata-rata
                         int[] avgRGB = getAverageRGB(croppedROI);
                         int r = avgRGB[0];
                         int g = avgRGB[1];
                         int b = avgRGB[2];
 
-                        // 3. Hitung Grayscale & Rumus CO2 (Ganti dengan rumus skripsi kamu)
                         int gray = (int) (0.299 * r + 0.587 * g + 0.114 * b);
-                        double co2Result = (255 - gray) * 2.5; // Contoh rumus linear
-
+                        double co2Result = (255 - gray) * 2.5;
                         runOnUiThread(() -> {
                             tvRGB.setText(String.format("Nilai RGB: (%d, %d, %d)", r, g, b));
                             tvGray.setText("Nilai Gray: " + gray);
                             tvPPB.setText(String.format("Kadar CO₂: %.2f ppb", co2Result));
 
-                            // Indikator sederhana
                             if (gray < 100) {
                                 tvKelayakan.setText("Status: Buruk / Pekat");
                                 tvKelayakan.setTextColor(ContextCompat.getColor(MainActivitydeteksi.this, android.R.color.holo_red_dark));
@@ -144,7 +138,6 @@ public class MainActivitydeteksi extends AppCompatActivity {
         buffer.get(bytes);
         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
 
-        // Rotasi otomatis sesuai orientasi HP
         Matrix matrix = new Matrix();
         matrix.postRotate(image.getImageInfo().getRotationDegrees());
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
@@ -154,7 +147,6 @@ public class MainActivitydeteksi extends AppCompatActivity {
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
 
-        // ROI 80dp dari Preview 260dp = ~30% dari lebar gambar
         double ratio = 80.0 / 260.0;
         int side = (int) (Math.min(width, height) * ratio);
 
