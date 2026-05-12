@@ -2,18 +2,15 @@ package com.example.thequality.homepage;
 
 public class HasilDeteksi {
 
-    private String tanggal;     // tanggalManusiawi
-    private String rgb;         // hasilRGB
-    private String gray;        // hasilGray
-    private double ppb;         // hasilPPB
-    private String status;      // LAYAK / TIDAK LAYAK
-    private String sekolah;     // SMAN Default / input user
+    private String tanggal;
+    private String rgb;
+    private String gray;
+    private double ppb;
+    private String status;
+    private String sekolah;
 
-    // Konstruktor kosong (diperlukan Firebase)
     public HasilDeteksi() {
     }
-
-    // Konstruktor lengkap
     public HasilDeteksi(String tanggal, String rgb, String gray, double ppb, String status, String sekolah) {
         this.tanggal = tanggal;
         this.rgb = rgb;
@@ -22,8 +19,6 @@ public class HasilDeteksi {
         this.status = status;
         this.sekolah = sekolah;
     }
-
-    // Getter wajib untuk Firebase
     public String getTanggal() {
         return tanggal;
     }
@@ -48,7 +43,6 @@ public class HasilDeteksi {
         return sekolah;
     }
 
-    // Setter (opsional kalau perlu)
     public void setTanggal(String tanggal) {
         this.tanggal = tanggal;
     }
